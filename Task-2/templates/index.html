@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owl AI Contact Form</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .input-field {
+      transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(99, 102, 241, 0.15);
+    }
+
+    .submit-btn {
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .owl-icon {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+
+<body class="h-full">
+  <div class="h-full w-full overflow-auto"
+       style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+
+    <div class="min-h-full flex items-center justify-center px-4 py-12">
+      <div class="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <div class="owl-icon text-6xl mb-4">
+            <img src="/static/unnamed.jpg"
+                 alt="Owl Icon"
+                 class="w-16 h-16 mx-auto">
+          </div>
+          <h1 class="text-4xl font-bold mb-2 text-indigo-500">Owl AI</h1>
+          <p class="text-gray-600 text-lg">Share your information with us</p>
+        </div>
+
+        <!-- Form -->
+        <form action="/submit" method="POST" class="space-y-6">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- First Name -->
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-700">
+                First Name
+              </label>
+              <input type="text" name="firstName" required
+                     class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 bg-gray-50"
+                     placeholder="John">
+            </div>
+
+            <!-- Last Name -->
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-700">
+                Last Name
+              </label>
+              <input type="text" name="lastName" required
+                     class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 bg-gray-50"
+                     placeholder="Doe">
+            </div>
+          </div>
+
+          <!-- Date of Birth -->
+          <div>
+            <label class="block text-sm font-semibold mb-2 text-gray-700">
+              Date of Birth
+            </label>
+            <input type="date" name="dob" required
+                   class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 bg-gray-50">
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label class="block text-sm font-semibold mb-2 text-gray-700">
+              Phone Number
+            </label>
+            <input type="tel" name="phone" required
+                   class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 bg-gray-50"
+                   placeholder="+91 9876543210">
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label class="block text-sm font-semibold mb-2 text-gray-700">
+              Gmail
+            </label>
+            <input type="email" name="email" required
+                   class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 bg-gray-50"
+                   placeholder="example@gmail.com">
+          </div>
+
+          <!-- Address -->
+          <div>
+            <label class="block text-sm font-semibold mb-2 text-gray-700">
+              Address
+            </label>
+            <textarea name="address" rows="3" required
+                      class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 bg-gray-50 resize-none"
+                      placeholder="Your full address"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit"
+                  class="submit-btn w-full py-4 rounded-lg font-semibold text-lg text-white bg-indigo-500">
+            Submit Information
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
